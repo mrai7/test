@@ -6,11 +6,6 @@ pipeline {
         bat 'mvn clean test'
       }
     }
-    stage('Deploy Standalone') { 
-      steps {
-        bat 'mvn deploy -P standalone'
-      }
-    }
     stage('Deploy CloudHub') { 
       environment {
         ANYPOINT_CREDENTIALS = credentials('anypoint.credentials')

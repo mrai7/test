@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Deploy CloudHub') { 
       steps {
-        bat 'mvn deploy -P cloudhub -Dmule.version=4.1.4 -Danypoint.username=emanishnitr2  -Danypoint.password=Man@1245' 
+        bat 'mvn clean install deploy -Dmule.version=4.1.4 -Danypoint.username=emanishnitr2  -Danypoint.password=Man@1245' -Danypoint.environment=Sandbox
       }
     }
   }
